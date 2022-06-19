@@ -1,0 +1,13 @@
+{
+  "auto-routing": {
+    "pagesDir": "src/pages",
+    "routePrefix": "",
+    "layoutsDir": "src/layouts",
+    "ignorePattern": "/(^|[/\\])../",
+    "outDir": "src/router/auto-routing",
+    "pagesImportPrefix": "pages/",
+    "generatorConfig": {
+      "nested": true
+    }
+  }
+}
