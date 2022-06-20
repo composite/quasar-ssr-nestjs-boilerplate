@@ -73,3 +73,7 @@ lerna-debug.log*
 
 # d.ts
 *.d.ts
+!src/env.d.ts
+!src/quasar.d.ts
+!src/shims-vue.d.ts
+!src-ssr/ssr-flag.d.ts
