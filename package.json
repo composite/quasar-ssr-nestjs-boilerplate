@@ -1,5 +1,5 @@
 {
-  "name": "@msartspoon/refinary",
+  "name": "quasar-ssr-nestjs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
