@@ -70,3 +70,6 @@ lerna-debug.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# d.ts
+*.d.ts

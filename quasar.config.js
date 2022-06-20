@@ -60,7 +60,6 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
-      // If you want use babel to transfile for browser, change it to "true".
       transpile: false,
       // publicPath: '/',
 
@@ -83,8 +82,8 @@ module.exports = configure(function (ctx) {
       // chainWebpack (/* chain */) {}
 
       extendWebpack(cfg) {
-        // If you want use babel to transfile for browser, comment or remove lines below in this function body.
-        cfg.module.rules.splice(1, 0, {
+        //console.log(JSON.stringify(cfg))
+        cfg.module.rules.splice(2, 0, {
           test: /\.(ts)$/,
           exclude: /(node_modules|\.quasar)/,
           loader: 'swc-loader',
@@ -106,7 +105,13 @@ module.exports = configure(function (ctx) {
       server: {
         type: 'http'
       },
-      port: 8080,
+      port: 3001,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3002',
+          changeOrigin: true,
+        }
+      },
       open: false // opens browser window automatically
     },
 
@@ -148,7 +153,6 @@ module.exports = configure(function (ctx) {
       // chainWebpackWebserver (/* chain */) {},
 
       middlewares: [
-        ctx.dev ? 'nestdev' : '',
         ctx.prod ? 'compression' : '',
         'render' // keep this as last one
       ]
