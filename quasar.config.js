@@ -60,6 +60,7 @@ module.exports = configure(function (ctx) {
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
 
+      // If you want use babel to transfile for browser, change it to "true".
       transpile: false,
       // publicPath: '/',
 
@@ -82,7 +83,7 @@ module.exports = configure(function (ctx) {
       // chainWebpack (/* chain */) {}
 
       extendWebpack(cfg) {
-        console.log(cfg.module.rules);
+        // If you want use babel to transfile for browser, comment or remove lines below in this function body.
         cfg.module.rules.splice(1, 0, {
           test: /\.(ts)$/,
           exclude: /(node_modules|\.quasar)/,
