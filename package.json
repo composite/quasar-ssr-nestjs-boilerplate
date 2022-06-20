@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm:dev:*\"",
+    "dev": "concurrently \"npm:dev:*(!spa)\"",
     "dev:front": "quasar dev -m ssr",
-    "dev:back": "nest build --webpack --webpackPath nestdev.config.js --watch",
+    "dev:spa": "quasar dev",
+    "dev:api": "nest build --webpack --webpackPath nestdev.config.js --watch",
     "build": "quasar build -m ssr",
+    "build:spa": "quasar build",
+    "build:api": "nest build",
     "clean": "rimraf dist",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "lint:fix": "eslint --ext .js,.ts,.vue ./ --fix",
@@ -16,7 +19,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "start": "node dist/ssr/index.js"
+    "start": "node dist/ssr/index.js",
+    "start:spa": "node dist/spa/index.js",
+    "start:api": "node dist/index.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.4.7",
