@@ -32,16 +32,17 @@ All files based on Quasar basic template and Nestjs basic template.
 
 ## <sub>FEATURE</sub>4<sub>YOU</sub>
 
-- Quasar SSR for Vue SSR with cons of SSR feature.
+- Quasar SSR for Vue SSR with pros of SSR feature. (SEO, splitting bandwidth, etc.)
 - Nest.JS for API Server and enjoy MVC Pattern. the URL prefix is `/api`.
   - NOTE: by edited `src-ssr/middlewares/render.ts`, Quasar will ignore all start with `/api` routes for API server reservation.
 - ALL IN ONE FULLSTACK SERVER FOR PRODUCTION!
 - Build with SWC instead of Babel(but you can still use babel by editing `quasar.config.js` file).
 - Also each Quasar SPA(CSR) and Nest.js development and building are suppored if you want separate frontend and backend.
+  - Of course, you can still use SSR also split client and server for scale.
 
 ## <sub>HOW</sub>2<sub>RUN</sub>
 
-`yarn` recommended!
+`yarn` recommended! (`yarn berry` [not supported yet](https://github.com/quasarframework/quasar/issues/7581)!)
 
 ### Development
 
